@@ -1,0 +1,21 @@
+Oct 24, 2011
+Took longer than expected to setup a simple firefox plugin
+    -tutorials had a max version number of 3 or 4 (firefox currently 7)
+    -had to combine 4 tutorials to get all of the necessary information
+
+Spent about 2 hours researching the "Autosummarization problem"
+Spent about 1 hour locating a word database in usable format
+**NOTE WordNet Seems to be the best fit
+    -Not in a reasonable format
+    -Would have taken too long to learn all of relationships
+    -Very strict license
+**NOTE Decided on a rehash of WordNet
+    -LICENSE IS VERY STRICT
+    -Easier format to parse and ingest
+    -has only the data I was looking for
+
+
+Design Decisions
+I decided to go with JavaScript FireFox plugin to interact with the user. I am by no means an expert in JavaScript but it test clearly states that the solution must work. However, in order to ensure that I can achieve my goals I decided to go with a Django server to do the heavy lifting. I have much more experience with python and I have a proper Debugging tool for Django. (Not sure if a debugger exists for a Firefox plugin).
+    I realize that there is a heavy cost for sending the work to a server vs doing a client side analysis. I am assuming that there would also be a small cost of including a dictionary file and other meta data on the client side. The may have also been a performance hit on the client. 
+
