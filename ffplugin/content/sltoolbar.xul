@@ -1,0 +1,17 @@
+<?xml version="1.0"?>                 
+<overlay id="Scrapper-Overlay"
+xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script type="application/x-javascript" src="chrome://ffplugin/content/interpreter.js" />
+<script type="application/x-javascript" src="chrome://ffplugin/content/jquery.min.js"></script>
+
+<toolbox id="navigator-toolbox">
+  <toolbar id="SLMainToolbar" toolbarname="Shopply Toolbar" >
+      <label id="SLLabel" value="Label: "/>
+      <textbox id="SLTextField" cols="1" size="50" />
+      <toolbarbutton id="SLActionButton"
+        label="Action" oncommand="SLAction(event)" />
+  </toolbar>
+</toolbox>
+
+</overlay>

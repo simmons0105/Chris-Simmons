@@ -1,0 +1,3 @@
+content ffplugin content/
+content ffplugin content/ contentaccessible=yes
+overlay chrome://browser/content/browser.xul chrome://ffplugin/content/sltoolbar.xul
