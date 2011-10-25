@@ -7,12 +7,24 @@ function SLAction() {
 
 }
 
-function httpGet(theUrl) {
+function httpPost(theUrl) {
     var xmlHttp = null;
 
     xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false );
-    xmlHttp.send( null );
+    var params = "myurl=simxsolutions.com";
+    xmlHttp.open( "POST", theUrl, true );
+
+    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlHttp.setRequestHeader("Content-length", params.length);
+    xmlHttp.setRequestHeader("Connection", "close");
+
+    xmlHttp.onreadystatechange = function() {//Call a function when the state changes.
+        if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+            alert(xmlHttp.responseText);
+        }
+    }
+
+    xmlHttp.send( params );
     return xmlHttp.responseText;
 }
 
@@ -31,16 +43,8 @@ var SLPageInterpretor = {
     if (doc.location.href == "about:blank")
       return;
 
-//    $.get(
-//          "10.0.1.116",
-//          {'location' : doc.location.href},
-//          function(data) {
-//             alert('response content: ' + data);
-//          }
-//      );
 
-
-    $("#SLTextField").val(httpGet("http://10.0.1.116/"));
+    httpPost("http://10.0.1.116/");
 
   },
 

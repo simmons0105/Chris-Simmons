@@ -25,8 +25,19 @@ def defaultDictionary(request):
 
 def index(request):
     paramDic = defaultDictionary(request)
+    relUrl = request.POST.get('myurl')
+
     response = HttpResponse()
-    jsonString = simplejson.dumps( ['word1', 'word2', 'word3', str(datetime.datetime.today())] )
+
+    if not relUrl:
+      response.write("Failure")
+      return response
+
+    jsonString = simplejson.dumps( [{'keyPhrase':'phrase1', 'iCount':45,'weight':94.456,},
+                                    {'keyPhrase':'phrase2', 'iCount':30,'weight':81.4436,},
+                                    {'keyPhrase':'phrase3', 'iCount':29,'weight':79.827,},
+                                    str(datetime.datetime.today()),
+                                    ] )
     response.write(jsonString)
 
     return response
