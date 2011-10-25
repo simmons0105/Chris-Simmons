@@ -50,19 +50,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shopply/interpreter/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="36" selection-start="688" selection-end="688" vertical-scroll-proportion="0.42769858">
+            <state line="27" column="0" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interpreter.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="interpreter.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shopply/interpreter/interpreter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="2" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
+            <state line="70" column="0" selection-start="1881" selection-end="1881" vertical-scroll-proportion="2.2580645">
               <folding />
             </state>
           </provider>
@@ -71,7 +71,7 @@
       <file leaf-file-name="interpreter.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ffplugin/content/interpreter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="23" selection-start="390" selection-end="395" vertical-scroll-proportion="0.0">
+            <state line="46" column="45" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -102,10 +102,10 @@
         <option value="$PROJECT_DIR$/shopply/urls.py" />
         <option value="$PROJECT_DIR$/shopply/interpreter/urls.py" />
         <option value="$PROJECT_DIR$/Notes.txt" />
-        <option value="$PROJECT_DIR$/shopply/interpreter/interpreter.py" />
         <option value="$PROJECT_DIR$/shopply/settings.py" />
         <option value="$PROJECT_DIR$/ffplugin/content/interpreter.js" />
         <option value="$PROJECT_DIR$/shopply/interpreter/views.py" />
+        <option value="$PROJECT_DIR$/shopply/interpreter/interpreter.py" />
       </list>
     </option>
   </component>
@@ -401,13 +401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shopply/interpreter/interpreter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="2" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shopply/interpreter/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="31" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
@@ -431,14 +424,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ffplugin/content/interpreter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="23" selection-start="390" selection-end="395" vertical-scroll-proportion="0.0">
+        <state line="46" column="45" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shopply/interpreter/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="36" selection-start="688" selection-end="688" vertical-scroll-proportion="0.42769858">
+        <state line="27" column="0" selection-start="647" selection-end="647" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopply/interpreter/interpreter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="0" selection-start="1881" selection-end="1881" vertical-scroll-proportion="2.2580645">
           <folding />
         </state>
       </provider>
