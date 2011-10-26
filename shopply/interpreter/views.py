@@ -32,7 +32,6 @@ def index(request):
     if not active_xml:
       response.write("Failure - Please post with valid XML string to process.")
       return response
-
     interp = Interpreter()
     interp.processXML(active_xml)
 

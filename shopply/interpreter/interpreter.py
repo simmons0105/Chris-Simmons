@@ -3,8 +3,30 @@ from models import *
 from shopply import settings
 import xml.parsers.expat
 import re
+import string
 
 import pdb
+
+
+class WordNode(object):
+  word = None
+  fEdges = {}
+  nEdges = {}
+  locations = []
+
+  def __init__(self,  *args, **kwargs):
+    self.word = None
+    self.fEdges = {}
+    self.nEdges = {}
+    self.locations = []
+    self.total_weight = 0
+    return super(WordNode, self).__init__(*args, **kwargs)
+
+  def calculate_weight(self):
+    self.total_weight = 0
+    for tup in self.locations:
+      self.total_weight += tup[1]
+    return self.total_weight
 
 
 #Decided to implement a naive parser because the python built in XML parsers
@@ -22,31 +44,32 @@ class XMLParser(object):
 
 
   def push_element(self, element_name, attrs, token):
-
+    element_name = element_name.upper()
     self.tag_stack.append((element_name, attrs, token))
     self.StartElementHandler(self, element_name, attrs)
 
 
   def pop_element(self, element_name, token):
 
+    element_name = element_name.upper()
     index = len(self.tag_stack) - 1
     delList = []
     match = False
-    #pop off elements until we find a matching tag
-    while self.tag_stack:
-      tup = self.tag_stack.pop()
-      delList.append(tup)
+
+    #make sure that we have an available match before we actually do anything
+    for tup in reversed(self.tag_stack):
       if tup[0] == element_name:
         match = True
         break
 
-    #indicates that there was no matching element
-    #assume current token is an error and restore the tag_list
-    if not match:
-      self.tag_stack = delList.reverse()
-      #may want to pass error along
-    else:
-      self.EndElementHandler(self, element_name )
+    #pop off elements until we find a matching tag
+    if match:
+      while self.tag_stack:
+        tup = self.tag_stack.pop()
+        self.EndElementHandler(self, tup[0])
+        if tup[0] == element_name:
+          break
+
 
 
   def process_element(self, token, element_name):
@@ -56,6 +79,7 @@ class XMLParser(object):
 
   def process_end_element(self, token, element_name):
     #may want to do further processing to ensure validity
+
     self.pop_element(element_name, token)
 
   def process_invalid_data(self, token):
@@ -69,6 +93,7 @@ class XMLParser(object):
     self.tokens = re.split("(<[^>]+>)", xmlData)
     self.token_pos = 0
     for token in self.tokens:
+
       if not token.strip():
         continue #empty string 
 
@@ -92,32 +117,108 @@ class XMLParser(object):
 
 class Interpreter(object):
   xmlString  = None
-  current_element = None
-  ignore_data = False
+  current_tag = None
+
+  min_word_size = 4
+  wb_size = 8 #word buffer size
+  word_count = 0
+
+  text_buffer = "" #keeps buffer of current text... flushes on certain tags
+  word_buffer = [] #list of last n words
+  tag_dic = {}
+  G = {}
+
+  def flushBuffers(self):
+    self.text_buffer = ""
+    self.word_buffer = []
+
+  def update_current_tag(self, element):
+    if element:
+      self.current_tag = self.tag_dic.get(element, {'name':element,'is_block':False, 'weight':1.0})
+    else:
+      self.current_tag = {}
 
   def start_element(self, parser,  element, attrs):
-    self.current_element = element
-    if element in ['link', 'script', 'style']:
-      self.ignore_data = True
-    print "start %s %s" % (str(element), str(attrs))
+    self.update_current_tag(element)
+
+    if self.current_tag['is_block']:
+      self.flushBuffers()
 
   def end_element(self,  parser, element):
-    self.ignore_data = False
-    print "end %s" % (str(element),)
+    if self.current_tag['name'] == element and self.current_tag['is_block']:
+      self.flushBuffers()
+
+    if parser.tag_stack:
+      tup = parser.tag_stack[-1]
+      self.update_current_tag(tup[0])
+    else:
+      self.update_current_tag(None)
+
+  def updateNode(self, node):
+    node.locations.append((self.word_count, self.current_tag['weight']))
+
+    #for each word in the current buffer we create two edges in the Graph
+    #a negative edge from the current word to the previous nodes
+    #and a positive edge from the previous nodes to the current node
+    for idx in range(1,len(self.word_buffer)):
+      pNode = self.word_buffer[idx]
+      nEdge = (self.word_count,-idx )
+      curEdges = node.nEdges.get(pNode.word, [])
+      curEdges.append(nEdge)
+      node.nEdges[pNode.word] = curEdges
+
+      fEdge = (self.word_count, idx)
+      fEdges = pNode.fEdges.get(node.word, [])
+      fEdges.append(fEdge)
+      pNode.fEdges[node.word] = fEdges
+
+  def process_word(self, word):
+    if (len(word) < self.min_word_size and word != word.upper()):
+      return
+
+    lword = word.lower()
+
+    self.word_count += 1
+    wNode = self.G.get(lword)
+    if not wNode:
+      wNode = WordNode()
+      wNode.word = lword
+      self.G[lword] = wNode
+
+    self.word_buffer.insert(0,wNode)
+    if len(self.word_buffer) > self.wb_size:
+      self.word_buffer.pop()
+
+    self.updateNode(wNode)
+
+
 
   def handle_data(self,  parser, data):
-    if self.ignore_data:
+    if not self.current_tag['weight']:
         return
-    
-    print "Data %s" % (str(data),)
+
+    #remove all special characters such as &amp; and &nbsp;
+    data = re.sub('&\w+;', "" , data)
+    self.text_buffer += data
+    word_data = re.split("[^a-zA-Z0-9']+", data)
+
+    #cycle through each word and add to the graph
+    for word in word_data:
+      if word.strip():
+        self.process_word(word)
 
   def __init__(self,  *args, **kwargs):
 
     self.parser = XMLParser()
-#    self.parser.returns_unicode = True
+
     self.parser.StartElementHandler = self.start_element
     self.parser.EndElementHandler = self.end_element
     self.parser.CharacterDataHandler = self.handle_data
+
+    #TODO - cache this so we are not making this call for every request
+    tagList = TagElement.objects.all().values("name", "is_block", "weight")
+    for t in tagList:
+      self.tag_dic[t['name']] = t
 
     return super(Interpreter, self).__init__(*args, **kwargs)
 
@@ -125,5 +226,9 @@ class Interpreter(object):
     try:
       xmlData = xmlData.encode('ascii','ignore')
       self.parser.parse(xmlData)
+
+      for node in self.G.values():
+        w = node.calculate_weight()
+        print node.word + " " + str(w)
     except Exception, e:
       print e
