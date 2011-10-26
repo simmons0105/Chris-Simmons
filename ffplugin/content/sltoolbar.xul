@@ -1,16 +1,24 @@
-<?xml version="1.0"?>                 
+<?xml version="1.0"?>
+<?xml-stylesheet href="toolbar.css" type="text/css"?>
 <overlay id="Scrapper-Overlay"
 xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<script type="application/x-javascript" src="chrome://ffplugin/content/interpreter.js" />
+    <script type="application/x-javascript" src="http://connect.facebook.net/en_US/all.js" />
+    <script type="application/x-javascript" src="chrome://ffplugin/content/fbconnect.js" />
+    <script type="application/x-javascript" src="chrome://ffplugin/content/interpreter.js" />
+
 <script type="application/x-javascript" src="chrome://ffplugin/content/jquery.min.js"></script>
 
 <toolbox id="navigator-toolbox">
   <toolbar id="SLMainToolbar" toolbarname="Shopply Toolbar" >
       <label id="SLLabel" value="Label: "/>
       <textbox id="SLTextField" cols="1" size="50" />
-      <toolbarbutton id="SLActionButton"
-        label="Action" oncommand="SLAction(event)" />
+      <toolbarbutton id="SLShareButton" oncommand="SLFBConnect.sharePage(event)" />
+      <spacer flex="1"/>
+          <label id="SLFBName" value=" "/>
+
+          <toolbarbutton id="SLActionButton" label="Log in to Facebook" oncommand="SLFBConnect.toggleLogin(event)" />
+
   </toolbar>
 </toolbox>
 

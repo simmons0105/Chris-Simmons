@@ -1,0 +1,14 @@
+@import url(chrome://global/skin/);
+
+#SLShareButton
+{
+    -moz-image-region: rect(0 32px 16px 0);
+   background-color: black;
+   background-image: url("chrome://ffplugin/skin/share_facebook.png");
+}
+
+#SLLabel
+{
+
+}
+

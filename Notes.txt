@@ -19,3 +19,7 @@ Design Decisions
 I decided to go with JavaScript FireFox plugin to interact with the user. I am by no means an expert in JavaScript but it test clearly states that the solution must work. However, in order to ensure that I can achieve my goals I decided to go with a Django server to do the heavy lifting. I have much more experience with python and I have a proper Debugging tool for Django. (Not sure if a debugger exists for a Firefox plugin).
     I realize that there is a heavy cost for sending the work to a server vs doing a client side analysis. I am assuming that there would also be a small cost of including a dictionary file and other meta data on the client side. The may have also been a performance hit on the client. 
 
+Oct 26
+Tested the facebook toolbar
+When I login into facebook via www.facebook.com the toolbar is able to detect it.
+And shows my username

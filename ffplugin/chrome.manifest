@@ -1,3 +1,4 @@
 content ffplugin content/
 content ffplugin content/ contentaccessible=yes
 overlay chrome://browser/content/browser.xul chrome://ffplugin/content/sltoolbar.xul
+style chrome://global/content/customizeToolbar.xul chrome://ffplugin/content/toolbar.css
