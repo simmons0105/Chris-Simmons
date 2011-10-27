@@ -2,13 +2,13 @@
 
 #SLShareButton
 {
-    -moz-image-region: rect(0 32px 16px 0);
-   background-color: black;
+    -moz-image-region: rect(0 50px 17px 0);
+   border: black solid 1px;
    background-image: url("chrome://ffplugin/skin/share_facebook.png");
 }
 
-#SLLabel
+#SLFBName
 {
-
+  margin-top: 7px;
 }
 

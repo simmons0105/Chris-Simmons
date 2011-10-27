@@ -42,6 +42,10 @@ var SLFBConnect = {
         gBrowser.selectedTab = gBrowser.addTab(askUrl);
     },
 
+    sharePage: function(event) {
+        alert("My apologies but this function does not yet work");
+    },
+
     onAuthLoad: function (event) {
         //looks for a facebook.com url with the access_token
         // TODO: find more robust way to find valid facebook url
@@ -50,7 +54,6 @@ var SLFBConnect = {
 
         if (event.originalTarget.location.href.indexOf("access_token") > 0)
         {
-            alert("Attempting session:" + event.originalTarget.location.href);
             // if the page loads to a facebook.com/#access_token=xx then we've authenticated successfully
             // we may want to add some additional error checking to make sure access_token is valid
 
@@ -79,9 +82,6 @@ var SLFBConnect = {
             try
             {
                 if (req.readyState != 4) { return; }
-
-//                alert("finished graph call, status = " + req.status);
-                alert("graph response: " + req.responseText);
 
                 if (req.status != 200)
                     return;
@@ -113,7 +113,24 @@ var SLFBConnect = {
             {
                 //debug("SAVING ACCESS TOKEN: " + accessToken);
                 $("#SLFBName").val(response.name);
-                $("#SLActionButton").attr("label", "Log out")
+                $("#SLActionButton").attr("label", "Log out");
+                $("#SLShareButton").show();
+
+                var elem = document.getElementById("SLFBContent");
+                while(elem.hasChildNodes()){
+                   elem.removeChild(elem.firstChild);
+                }
+                
+                var sNode = document.createElement('toolbarbutton');
+                sNode.setAttribute("label", "Share on FB");
+                sNode.setAttribute('oncommand', "SLFBConnect.sharePage(event)");
+                sNode.setAttribute('id', "SLShareButton");
+                elem.appendChild(sNode);
+
+                var nNode = document.createElement("label");
+                nNode.setAttribute("value", response.name);
+                nNode.setAttribute("id","SLFBName");
+                elem.appendChild(nNode);
 
 //                fbSvc._uid = response.id;
 //                fbSvc._loggedIn      = true;

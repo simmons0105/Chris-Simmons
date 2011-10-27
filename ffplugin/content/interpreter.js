@@ -92,6 +92,10 @@ var SLPageInterpretor = {
         }
 
     }
+
+    // unable to get any fancy highlighting working
+//    $("#SLInterpretContent").animate({color:'red'}, 3000);
+
   },
 
   submitPage: function httpPost(theUrl, data) {

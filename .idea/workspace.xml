@@ -26,7 +26,7 @@
       <file leaf-file-name="interpreter.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ffplugin/content/interpreter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="7" selection-start="1862" selection-end="1867" vertical-scroll-proportion="0.20430107">
+            <state line="95" column="51" selection-start="2922" selection-end="2922" vertical-scroll-proportion="0.516129">
               <folding />
             </state>
           </provider>
@@ -35,7 +35,16 @@
       <file leaf-file-name="sltoolbar.xul" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ffplugin/content/sltoolbar.xul">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
+            <state line="13" column="37" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="toolbar.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ffplugin/content/toolbar.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="12" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -44,7 +53,7 @@
       <file leaf-file-name="fbconnect.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ffplugin/content/fbconnect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="116" column="0" selection-start="4162" selection-end="4162" vertical-scroll-proportion="0.0">
+            <state line="131" column="52" selection-start="4787" selection-end="4787" vertical-scroll-proportion="-15.0">
               <folding />
             </state>
           </provider>
@@ -63,15 +72,6 @@
         <entry file="file://$PROJECT_DIR$/shopply/interpreter/interpreter.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="237" column="34" selection-start="6457" selection-end="6457" vertical-scroll-proportion="-40.384617">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chrome.manifest" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ffplugin/chrome.manifest">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="76" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -99,13 +99,13 @@
         <option value="$PROJECT_DIR$/shopply/interpreter/models.py" />
         <option value="$PROJECT_DIR$/Notes.txt" />
         <option value="$PROJECT_DIR$/ffplugin/content/fbconnect copy.js" />
-        <option value="$PROJECT_DIR$/ffplugin/content/fbconnect.js" />
         <option value="$PROJECT_DIR$/ffplugin/skin/toolbar.css" />
         <option value="$PROJECT_DIR$/ffplugin/chrome.manifest" />
-        <option value="$PROJECT_DIR$/ffplugin/content/toolbar.css" />
-        <option value="$PROJECT_DIR$/ffplugin/content/sltoolbar.xul" />
         <option value="$PROJECT_DIR$/shopply/interpreter/views.py" />
         <option value="$PROJECT_DIR$/shopply/interpreter/interpreter.py" />
+        <option value="$PROJECT_DIR$/ffplugin/content/fbconnect.js" />
+        <option value="$PROJECT_DIR$/ffplugin/content/toolbar.css" />
+        <option value="$PROJECT_DIR$/ffplugin/content/sltoolbar.xul" />
         <option value="$PROJECT_DIR$/ffplugin/content/interpreter.js" />
       </list>
     </option>
@@ -429,11 +429,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../../Library/Application Support/Firefox/Profiles/xrjsyrky.PluginUser/extensions/firefox@facebook.com/chrome/content/lib.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="317" column="0" selection-start="10917" selection-end="10917" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ffplugin/content/jquery.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -444,13 +439,6 @@
         <state line="24" column="21" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ffplugin/content/toolbar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ffplugin/chrome.manifest">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="76" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" />
@@ -459,18 +447,6 @@
     <entry file="file://$PROJECT_DIR$/ffplugin/install.rdf">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ffplugin/content/fbconnect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="0" selection-start="4162" selection-end="4162" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ffplugin/content/sltoolbar.xul">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shopply/interpreter/views.py">
@@ -487,9 +463,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ffplugin/content/toolbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="12" selection-start="224" selection-end="224" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ffplugin/content/sltoolbar.xul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="37" selection-start="689" selection-end="689" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ffplugin/content/fbconnect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="52" selection-start="4787" selection-end="4787" vertical-scroll-proportion="-15.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ffplugin/content/interpreter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="7" selection-start="1862" selection-end="1867" vertical-scroll-proportion="0.20430107">
+        <state line="95" column="51" selection-start="2922" selection-end="2922" vertical-scroll-proportion="0.516129">
           <folding />
         </state>
       </provider>

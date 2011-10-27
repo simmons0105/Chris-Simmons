@@ -11,12 +11,15 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 <toolbox id="navigator-toolbox">
   <toolbar id="SLMainToolbar" toolbarname="Shopply Toolbar" >
+      <label id="SLMainLabel" value="Key Phrase(s):"/>
+
       <box id="SLInterpretContent">
       </box>
-      <toolbarbutton id="SLShareButton" oncommand="SLFBConnect.sharePage(event)" />
       <spacer flex="1"/>
-          <label id="SLFBName" value=" "/>
 
+          <box id="SLFBContent">
+          <label id="SLFBName" value=" "/>
+          </box>
           <toolbarbutton id="SLActionButton" label="Log in to Facebook" oncommand="SLFBConnect.toggleLogin(event)" />
 
   </toolbar>
