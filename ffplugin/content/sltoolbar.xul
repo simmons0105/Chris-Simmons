@@ -11,8 +11,8 @@ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 <toolbox id="navigator-toolbox">
   <toolbar id="SLMainToolbar" toolbarname="Shopply Toolbar" >
-      <label id="SLLabel" value="Label: "/>
-      <textbox id="SLTextField" cols="1" size="50" />
+      <box id="SLInterpretContent">
+      </box>
       <toolbarbutton id="SLShareButton" oncommand="SLFBConnect.sharePage(event)" />
       <spacer flex="1"/>
           <label id="SLFBName" value=" "/>

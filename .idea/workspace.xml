@@ -23,10 +23,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="interpreter.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shopply/interpreter/interpreter.py">
+      <file leaf-file-name="interpreter.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ffplugin/content/interpreter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="210" column="0" selection-start="5530" selection-end="5530" vertical-scroll-proportion="0.0">
+            <state line="58" column="7" selection-start="1862" selection-end="1867" vertical-scroll-proportion="0.20430107">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sltoolbar.xul" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ffplugin/content/sltoolbar.xul">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,28 +50,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interpreter.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ffplugin/content/interpreter.js">
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shopply/interpreter/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="0" selection-start="3095" selection-end="3095" vertical-scroll-proportion="0.0">
+            <state line="44" column="22" selection-start="1210" selection-end="1210" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sltoolbar.xul" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ffplugin/content/sltoolbar.xul">
+      <file leaf-file-name="interpreter.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shopply/interpreter/interpreter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="23" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="toolbar.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ffplugin/content/toolbar.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="212" selection-end="212" vertical-scroll-proportion="0.36659878">
+            <state line="237" column="34" selection-start="6457" selection-end="6457" vertical-scroll-proportion="-40.384617">
               <folding />
             </state>
           </provider>
@@ -97,16 +97,16 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/shopply/interpreter/models.py" />
-        <option value="$PROJECT_DIR$/shopply/interpreter/views.py" />
-        <option value="$PROJECT_DIR$/shopply/interpreter/interpreter.py" />
         <option value="$PROJECT_DIR$/Notes.txt" />
         <option value="$PROJECT_DIR$/ffplugin/content/fbconnect copy.js" />
-        <option value="$PROJECT_DIR$/ffplugin/content/interpreter.js" />
         <option value="$PROJECT_DIR$/ffplugin/content/fbconnect.js" />
         <option value="$PROJECT_DIR$/ffplugin/skin/toolbar.css" />
         <option value="$PROJECT_DIR$/ffplugin/chrome.manifest" />
-        <option value="$PROJECT_DIR$/ffplugin/content/sltoolbar.xul" />
         <option value="$PROJECT_DIR$/ffplugin/content/toolbar.css" />
+        <option value="$PROJECT_DIR$/ffplugin/content/sltoolbar.xul" />
+        <option value="$PROJECT_DIR$/shopply/interpreter/views.py" />
+        <option value="$PROJECT_DIR$/shopply/interpreter/interpreter.py" />
+        <option value="$PROJECT_DIR$/ffplugin/content/interpreter.js" />
       </list>
     </option>
   </component>
@@ -429,11 +429,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/shopply/interpreter/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="851" selection-end="851" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../Library/Application Support/Firefox/Profiles/xrjsyrky.PluginUser/extensions/firefox@facebook.com/chrome/content/lib.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="317" column="0" selection-start="10917" selection-end="10917" vertical-scroll-proportion="0.0" />
@@ -449,49 +444,52 @@
         <state line="24" column="21" selection-start="1521" selection-end="1521" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shopply/interpreter/interpreter.py">
+    <entry file="file://$PROJECT_DIR$/ffplugin/content/toolbar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="210" column="0" selection-start="5530" selection-end="5530" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ffplugin/content/interpreter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="0" selection-start="3095" selection-end="3095" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ffplugin/content/fbconnect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="0" selection-start="4162" selection-end="4162" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ffplugin/install.rdf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="12" column="0" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ffplugin/chrome.manifest">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="76" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="3" column="76" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ffplugin/install.rdf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ffplugin/content/fbconnect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="0" selection-start="4162" selection-end="4162" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ffplugin/content/sltoolbar.xul">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="23" selection-start="45" selection-end="45" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="701" selection-end="701" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ffplugin/content/toolbar.css">
+    <entry file="file://$PROJECT_DIR$/shopply/interpreter/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="212" selection-end="212" vertical-scroll-proportion="0.36659878">
+        <state line="44" column="22" selection-start="1210" selection-end="1210" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shopply/interpreter/interpreter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="237" column="34" selection-start="6457" selection-end="6457" vertical-scroll-proportion="-40.384617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ffplugin/content/interpreter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="7" selection-start="1862" selection-end="1867" vertical-scroll-proportion="0.20430107">
           <folding />
         </state>
       </provider>

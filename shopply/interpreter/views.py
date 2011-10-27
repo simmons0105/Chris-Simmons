@@ -26,21 +26,28 @@ def defaultDictionary(request):
 
 def index(request):
 
-    active_xml = request.POST.get('activexml')
-
     response = HttpResponse()
-    if not active_xml:
-      response.write("Failure - Please post with valid XML string to process.")
+    try:
+      active_xml = request.POST.get('activexml')
+
+      if not active_xml:
+        response.write("Failure - Please post with valid XML string to process.")
+        return response
+      interp = Interpreter()
+      interp.processXML(active_xml)
+      interpList = interp.topPhraseList(count = 3)
+
+      outputList = [interp.word_count]
+      for tup in interpList:
+        outputList.append({'keyPhrase':tup[0], "iCount" : tup[1], "weight":tup[2]})
+
+      jsonString = simplejson.dumps( outputList )
+      print outputList
+      response.write(jsonString)
+
       return response
-    interp = Interpreter()
-    interp.processXML(active_xml)
 
-
-    jsonString = simplejson.dumps( [{'keyPhrase':'phrase1', 'iCount':45,'weight':94.456,},
-                                    {'keyPhrase':'phrase2', 'iCount':30,'weight':81.4436,},
-                                    {'keyPhrase':'phrase3', 'iCount':29,'weight':79.827,},
-                                    str(datetime.datetime.today()),
-                                    ] )
-    response.write(jsonString)
-
-    return response
+    except Exception, e:
+      print e
+      response.write(str(e))
+      return response

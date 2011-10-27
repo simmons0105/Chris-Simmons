@@ -13,6 +13,8 @@ class WordNode(object):
   fEdges = {}
   nEdges = {}
   locations = []
+  total_weight = 0
+  instance_count = 0
 
   def __init__(self,  *args, **kwargs):
     self.word = None
@@ -24,7 +26,9 @@ class WordNode(object):
 
   def calculate_weight(self):
     self.total_weight = 0
+    self.instance_count = 0
     for tup in self.locations:
+      self.instance_count += 1
       self.total_weight += tup[1]
     return self.total_weight
 
@@ -44,6 +48,9 @@ class XMLParser(object):
 
 
   def push_element(self, element_name, attrs, token):
+    if self.tag_stack and self.tag_stack[-1][0] == 'SCRIPT':
+      return #special case ... script cannot have child tags
+
     element_name = element_name.upper()
     self.tag_stack.append((element_name, attrs, token))
     self.StartElementHandler(self, element_name, attrs)
@@ -173,7 +180,9 @@ class Interpreter(object):
       pNode.fEdges[node.word] = fEdges
 
   def process_word(self, word):
-    if (len(word) < self.min_word_size and word != word.upper()):
+
+    #TODO handle acronyms that are shorter than min_word_size
+    if len(word) < self.min_word_size:
       return
 
     lword = word.lower()
@@ -197,6 +206,7 @@ class Interpreter(object):
     if not self.current_tag['weight']:
         return
 
+    #TODO need to handle some basic style attributes such as "display:none;"
     #remove all special characters such as &amp; and &nbsp;
     data = re.sub('&\w+;', "" , data)
     self.text_buffer += data
@@ -225,10 +235,21 @@ class Interpreter(object):
   def processXML(self, xmlData):
     try:
       xmlData = xmlData.encode('ascii','ignore')
+      self.G = {} #reset the graph
       self.parser.parse(xmlData)
 
       for node in self.G.values():
         w = node.calculate_weight()
-        print node.word + " " + str(w)
+#        print node.word + " " + str(w)
     except Exception, e:
       print e
+
+
+  def topPhraseList(self, count = 3):
+    sList = sorted(self.G.values(), key=lambda node: node.total_weight, reverse=True)
+
+    result = []
+    for node in sList[:count]:
+      result.append((node.word, node.instance_count, node.total_weight))
+
+    return result
