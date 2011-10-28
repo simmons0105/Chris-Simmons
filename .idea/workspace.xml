@@ -62,7 +62,7 @@
       <file leaf-file-name="install.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shopply/templates/interpreter/install.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="48" selection-start="446" selection-end="446" vertical-scroll-proportion="0.7066381">
+            <state line="22" column="50" selection-start="448" selection-end="448" vertical-scroll-proportion="0.7066381">
               <folding />
             </state>
           </provider>
@@ -520,7 +520,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shopply/templates/interpreter/install.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="48" selection-start="446" selection-end="446" vertical-scroll-proportion="0.7066381">
+        <state line="22" column="50" selection-start="448" selection-end="448" vertical-scroll-proportion="0.7066381">
           <folding />
         </state>
       </provider>
