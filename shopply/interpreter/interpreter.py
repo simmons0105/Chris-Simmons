@@ -48,8 +48,8 @@ class XMLParser(object):
 
 
   def push_element(self, element_name, attrs, token):
-    if self.tag_stack and self.tag_stack[-1][0] == 'SCRIPT':
-      return #special case ... script cannot have child tags
+    if self.tag_stack and self.tag_stack[-1][0] in ('SCRIPT', 'STYLE'):
+      return #special case ... script, style cannot have child tags
 
     element_name = element_name.upper()
     self.tag_stack.append((element_name, attrs, token))

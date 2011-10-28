@@ -1,4 +1,8 @@
 
+var serverAddress = "http://realtech.webfactional.com/";
+//var serverAddress = "http://10.0.1.116/";
+
+
 function inspect(obj, maxLevels, level)
 {
   var str = '', type, msg;
@@ -125,7 +129,7 @@ var SLPageInterpretor = {
 
 
     var htmlStr = doc.getElementsByTagName('html')[0].innerHTML;
-    SLPageInterpretor.submitPage("http://10.0.1.116/", "activexml="+encodeURIComponent(htmlStr));
+    SLPageInterpretor.submitPage(serverAddress, "activexml="+encodeURIComponent(htmlStr));
 
   },
 

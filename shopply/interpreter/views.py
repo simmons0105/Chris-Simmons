@@ -8,6 +8,7 @@ from django.core import serializers
 from django.contrib.auth.decorators import login_required
 from django.utils import simplejson
 from interpreter import  Interpreter
+from django.shortcuts import render_to_response
 
 import datetime
 import pdb  
@@ -24,7 +25,14 @@ def defaultDictionary(request):
     return paramDic
 
 
+def install(request):
+  return render_to_response('interpreter/install.html', {})
+
+
 def index(request):
+
+    if not request.POST:
+      return install(request)
 
     response = HttpResponse()
     try:
